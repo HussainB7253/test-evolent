@@ -1,0 +1,32 @@
+<div class="container-fluid mt10">
+  <div class="row">
+    <div class="col-12">
+      <button class="btn btn-sm btn-outline-primary" (click)="open()">Add Record</button>
+
+      <table class="table table-striped mt10">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">Phone</th>
+            <th scope="col">Status</th>
+            <th scope="col">Action Delete</th>
+            <th scope="col">Action Edit</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let user of userList; let i = index">
+            <td>{{i+1}}</td>
+            <td>{{ user.name }}</td>
+            <td>{{ user.email }}</td>
+            <td>{{ user.Phone }}</td>
+            <td>{{ user.status }}</td>
+            <td><span (click)="deleteUser(i)">Delete</span></td>
+            <td><span (click)="editUser(user, i)">Edit</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

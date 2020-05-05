@@ -1,0 +1,35 @@
+<div class="modal-header">
+  <h4 class="modal-title" id="modal-basic-title">{{type}} Record</h4>
+  <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body">
+  <form action="/action_page.php">
+    <div class="form-group">
+      <label for="name">Name:</label>
+      <input type="text" name="name" class="form-control" placeholder="Enter name" id="uname"
+        [(ngModel)]="userObj.name">
+    </div>
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input type="email" class="form-control" name="cc" placeholder="Enter email" id="emailcc"
+        [(ngModel)]="userObj.email">
+    </div>
+    <div class="form-group">
+      <label for="pwd">Phone:</label>
+      <input type="text" class="form-control" name="subject" placeholder="Enter Phone Number" id="subject"
+        [(ngModel)]="userObj.Phone">
+    </div>
+    <div class="form-group">
+      <label for="status">Status:</label>
+      <select class="form-control" id="status" name="status" [(ngModel)]="userObj.status">
+        <option>Active</option>
+        <option>Inactive</option>
+      </select>
+    </div>
+  </form>
+</div>
+<div class="modal-footer">
+  <button type="submit" class="btn btn-primary" (click)="save()">Submit</button>
+</div>
